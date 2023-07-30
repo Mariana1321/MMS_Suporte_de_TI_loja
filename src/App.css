@@ -1,38 +1,235 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+
+/* > afeta somente o header que é filho direto de body*/
+#root > header {
+  background: #111;
+  color: white;
+  font-size: 24px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#root > main {
+  background-image: url(./img/carrinho.png);
+  /* background: linear-gradient(72deg, #1ecad349 10%, #f0706757 90%); */
+  padding: 0 30px 30px;
+}
+
+#root > main .page-title {
+  font-size: 40px;
+  padding: 50px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root > main .content {
   display: flex;
-  flex-direction: column;
+}
+
+#root >  main .content section {
+    flex: 1;
+}
+
+#root >  main .content aside {
+  min-width: 250px;
+}
+
+button {
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn1{
+  
+  color: black;
+  background:#86c7ed ;
+}
+.btn2{
+  color: white;
+  background:#0097b2 ;
+}
+.btn3{
+  color: white;
+  background:#1836b2;
+}
+
+/* Tabela de serviços */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead tr {
+  border-bottom: 3px solid #eee;
+}
+
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  color: black;
+}
+
+table tbody tr {
+  border-bottom: 3px solid #eee;
+}
+
+/* se for a ultima tr, quero que a borda seja 0 */
+table tbody tr:last-child {
+  border: 0;
+}
+
+table tbody tr td {
+  padding: 50px 0;
+}
+
+/* Cada pacote de serviço */
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.product img {
+  border-radius: 6px;
+  border: 1px solid #090000;
+}
+
+.product .info {
+  margin-left: 20px;
+}
+
+.product .info .name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Botão quantidade */
+.qty {
+  background: #eee;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+
+.qty span {
+  margin: 0 10px;
+}
+
+.qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+
+.qty button:hover {
+  background: #ddd;
+}
+
+/* botão excluir mercadoria do carrinho */
+.remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 20px;
+}
+
+.remove:hover {
+  background: #ddd;
+}
+
+/* bolco resumo de compras */
+aside {
+  margin-left: 30px;
+}
+
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #222;
+}
+
+aside .box header {
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* aplica somente em "adicionar cupom" */
+aside .box .info > div:last-child {
+  margin: 0;
+}
+
+/* botão adicionar cupom*/
+aside .box .info button {
+  color: #28a745;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+aside .box footer {
+  padding: 15px 20px;
+  background: #ddd;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* botão finalizar compra */
+aside > button {
+  border: 0;
+  padding: 15px 0;
   color: white;
+  background: #28a745;
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+aside > button:hover {
+  background: #3bc55b;
 }
